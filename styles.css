@@ -1,3 +1,4 @@
+/* styles.css */
 body {
     font-family: Arial, sans-serif;
     display: flex;
@@ -8,41 +9,13 @@ body {
     background-color: #f0f0f0;
 }
 
-.slider {
-    position: relative;
+.swiper-container {
     width: 80%;
     max-width: 800px;
-    overflow: hidden;
 }
 
-.slides {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
-
-.slides img {
+.swiper-slide img {
     max-width: 100%;
     max-height: 100%;
     object-fit: contain; /* Это свойство поможет сохранить пропорции изображения */
-    flex-shrink: 0;
-}
-
-.prev, .next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    font-size: 18px;
-}
-
-.prev {
-    left: 10px;
-}
-
-.next {
-    right: 10px;
 }
