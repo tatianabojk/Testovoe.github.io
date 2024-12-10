@@ -4,17 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Тестовое задание</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="slider">
-        <div class="slides">
-            <img src="https://raw.githubusercontent.com/tatianabojk/Testovoe.github.io/main/ввод_номера.png" alt="Image1">
-            <img src="https://raw.githubusercontent.com/tatianabojk/Testovoe.github.io/main/запрет_парковки.png" alt="Image2">
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="https://raw.githubusercontent.com/tatianabojk/Testovoe.github.io/main/ввод_номера.png" alt="Image1"></div>
+            <div class="swiper-slide"><img src="https://raw.githubusercontent.com/tatianabojk/Testovoe.github.io/main/запрет_парковки.png" alt="Image2"></div>
         </div>
-        <button class="prev" onclick="prevSlide()">❮</button>
-        <button class="next" onclick="nextSlide()">❯</button>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
     </div>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
