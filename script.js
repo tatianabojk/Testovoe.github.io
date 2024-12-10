@@ -1,11 +1,12 @@
 // script.js
 let currentIndex = 0;
-const slides = document.querySelectorAll('.slides img');
+const slides = document.querySelectorAll('.slide');
 const totalSlides = slides.length;
 
 function showSlide(index) {
-    const slideWidth = document.querySelector('.slider').offsetWidth;
-    document.querySelector('.slides').style.transform = `translateX(-${index * slideWidth}px)`;
+    slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
+    });
 }
 
 function nextSlide() {
