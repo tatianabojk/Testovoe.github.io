@@ -5,8 +5,7 @@ const totalSlides = slides.length;
 
 function showSlide(index) {
     const slideWidth = document.querySelector('.slider').offsetWidth;
-    const margin = 20; // Ширина отступа между изображениями
-    document.querySelector('.slides').style.transform = `translateX(-${index * (slideWidth + margin)}px)`;
+    document.querySelector('.slides').style.transform = `translateX(-${index * slideWidth}px)`;
 }
 
 function nextSlide() {
