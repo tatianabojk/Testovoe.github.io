@@ -4,60 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Тестовое задание</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f0f0f0;
-            flex-direction: column;
-        }
-        .slide {
-            max-width: 100%;
-            height: auto;
-            border: 2px solid #ccc;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            display: none;
-        }
-        .slide.active {
-            display: block;
-        }
-        button {
-            margin-top: 20px;
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            background-color: #007BFF;
-            color: white;
-            border: none;
-            border-radius: 5px;
-        }
-        button:hover {
-            background-color: #0056b3;
-        }
-    </style>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <main>
-        <img class="slide active" src="https://raw.githubusercontent.com/tatianabojk/Testovoe.github.io/main/ввод_номера.png" alt="Image1">
-        <img class="slide" src="https://raw.githubusercontent.com/tatianabojk/Testovoe.github.io/main/запрет_парковки.png" alt="Image2">
+        <img class="slide active" src="https://via.placeholder.com/600x400?text=Image+1" alt="Image1">
+        <img class="slide" src="https://via.placeholder.com/600x400?text=Image+2" alt="Image2">
         <button id="nextButton">Следующее изображение</button>
     </main>
-    <script>
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.slide');
-        const nextButton = document.getElementById('nextButton');
-
-        nextButton.addEventListener('click', () => {
-            slides[currentSlide].classList.remove('active');
-            currentSlide = (currentSlide + 1) % slides.length;
-            slides[currentSlide].classList.add('active');
-        });
-    </script>
+    <script src="js/scripts.js"></script>
 </body>
 </html>
