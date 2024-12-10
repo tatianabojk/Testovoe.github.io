@@ -4,9 +4,8 @@ const slides = document.querySelectorAll('.slide');
 const totalSlides = slides.length;
 
 function showSlide(index) {
-    slides.forEach((slide, i) => {
-        slide.classList.toggle('active', i === index);
-    });
+    const slideWidth = document.querySelector('.slider').offsetWidth;
+    document.querySelector('.slides').style.transform = `translateX(-${index * slideWidth}px)`;
 }
 
 function nextSlide() {
