@@ -34,11 +34,12 @@
         }
         .buttons {
             position: absolute;
-            top: 50%;
-            width: 100%;
+            bottom: 10px; /* Опустим кнопки вниз */
+            left: 50%;
+            transform: translateX(-50%);
             display: flex;
             justify-content: space-between;
-            transform: translateY(-50%);
+            width: 80%; /* Ширина кнопок */
         }
         button {
             background-color: #007BFF;
@@ -47,6 +48,8 @@
             padding: 10px 20px;
             cursor: pointer;
             border-radius: 5px;
+            flex: 1; /* Кнопки займут равное пространство */
+            margin: 0 5px; /* Отступ между кнопками */
         }
         button:hover {
             background-color: #0056b3;
@@ -56,8 +59,9 @@
 <body>
 
     <div class="slider">
-        <img src="images2/json.png" class="slide active" alt="Image 1">
         <img src="images2/2.png" class="slide" alt="Image 2">
+        <img src="images2/json.png" class="slide active" alt="Image 1">
+
         
         <div class="buttons">
             <button id="prevButton">Назад</button>
