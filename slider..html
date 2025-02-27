@@ -5,7 +5,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Слайдер изображений</title>
    <style>
-    https://tatianabojk.github.io/Testovoe.github.io/
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+.slider {
+    position: relative;
+    width: 600px;
+    height: 250px; /* Уменьшенная высота контейнера */
+    overflow: hidden;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+}
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+.slide.active {
+    opacity: 1;
+}
+.slide img {
+    width: 100%; /* Заставляет изображение занимать всю ширину контейнера */
+    height: auto; /* Сохраняет пропорции изображения */
+    max-height: 100%; /* Ограничивает максимальную высоту изображения */
+    object-fit: contain; /* Сохраняет пропорции и помещает изображение в контейнер */
+}
+.buttons {
+    position: absolute;
+    bottom: 10px; /* Опустим кнопки вниз */
+    left: 0; /* Установим левую границу на 0 */
+    right: 0; /* Установим правую границу на 0 */
+    display: flex;
+    justify-content: space-between; /* Распределяем кнопки по бокам */
+    width: 80%; /* Ширина кнопок */
+    margin: 0 auto; /* Центрируем контейнер кнопок */
+}
+button {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    flex: 0 0 50px; /* Установите фиксированную ширину для кнопок */
+    margin: 0 10px; /* Отступ между кнопками */
+}
+button:hover {
+    color: #007BFF;
+}
 </style>
 </head>
 <body>
