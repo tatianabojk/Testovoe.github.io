@@ -4,67 +4,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Слайдер изображений</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f9f9f9;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-        .slider {
-            position: relative;
-            width: 600px;
-            height: 400px;
-            overflow: hidden;
-            border: 2px solid #ccc;
-            border-radius: 10px;
-        }
-        .slide {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            opacity: 0;
-            transition: opacity 0.5s ease;
-        }
-        .slide.active {
-            opacity: 1;
-        }
-        .buttons {
-            position: absolute;
-            bottom: 10px; /* Опустим кнопки вниз */
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            justify-content: space-between;
-            width: 80%; /* Ширина кнопок */
-        }
-        button {
-            background-color: #007BFF;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-            border-radius: 5px;
-            flex: 1; /* Кнопки займут равное пространство */
-            margin: 0 5px; /* Отступ между кнопками */
-        }
-        button:hover {
-            background-color: #0056b3;
-        }
-    </style>
+   <style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f9f9f9;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+    .slider {
+        position: relative;
+        width: 600px;
+        height: 400px;
+        overflow: hidden;
+        border: 2px solid #ccc;
+        border-radius: 10px;
+    }
+    .slide {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: opacity 0.5s ease;
+    }
+    .slide.active {
+        opacity: 1;
+    }
+    .buttons {
+        position: absolute;
+        bottom: 10px; /* Опустим кнопки вниз */
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        justify-content: space-between;
+        width: 80%; /* Ширина кнопок */
+    }
+    button {
+        background: none; /* Убираем фоновый цвет */
+        border: none; /* Убираем рамку */
+        font-size: 24px; /* Размер иконки */
+        cursor: pointer;
+        flex: 1; /* Кнопки займут равное пространство */
+        margin: 0 5px; /* Отступ между кнопками */
+    }
+    button:hover {
+        color: #007BFF; /* Цвет при наведении */
+    }
+</style>
 </head>
 <body>
 
     <div class="slider">
-        <img src="images2/2.png" class="slide active" alt="Image 1"> <!-- Первое изображение -->
+        <img src="images2/2.png" class="slide active" alt="Image 1" width="500" height="600"> <!-- Первое изображение -->
         <img src="images2/json.png" class="slide" alt="Image 2"> <!-- Второе изображение -->
-        
+        <img src="images2/постман.png" class="slide" alt="Image 3"> <!-- Третье изображение -->
         <div class="buttons">
-            <button id="prevButton">Назад</button>
-            <button id="nextButton">Вперед</button>
+            <button id="prevButton">&#8592;</button> <!-- Стрелка влево -->
+    <button id="nextButton">&#8594;</button> <!-- Стрелка вправо -->
         </div>
     </div>
 
