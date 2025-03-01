@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Слайдер изображений</title>
     <style>
-        body {
+       body {
             font-family: Arial, sans-serif;
             background-color: #f9f9f9;
             display: flex;
@@ -21,7 +21,7 @@
             overflow: hidden;
             border: 2px solid #ccc;
             border-radius: 10px;
-            padding-bottom: 60px; /* Добавляем отступ снизу для поля ввода */
+            padding-bottom: 80px; /* Добавляем отступ снизу для поля ввода */
         }
         .slide {
             position: absolute;
@@ -41,7 +41,7 @@
         }
         .textarea-container {
             position: absolute;
-            bottom: 10px; /* Расположение поля ввода */
+            bottom: 20px; /* Расположение поля ввода, опустим его ниже */
             left: 50%;
             transform: translateX(-50%); /* Центрируем поле ввода */
             background-color: rgba(255, 255, 255, 0.8); /* Полупрозрачный фон */
@@ -51,11 +51,12 @@
         }
         .textarea-container textarea {
             width: 100%; /* Ширина текстовой области */
-            height: 50px; /* Высота текстовой области */
+            height: 100px; /* Увеличиваем высоту текстовой области */
             padding: 5px;
             font-size: 16px;
             border: 1px solid #ccc;
             border-radius: 5px;
+            resize: none; /* Запретить изменение размера текстовой области */
         }
         .buttons {
             position: absolute;
