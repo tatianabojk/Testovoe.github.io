@@ -46,6 +46,7 @@
             background-color: rgba(255, 255, 255, 0.8); /* Полупрозрачный фон */
             padding: 10px;
             border-radius: 5px;
+            display: none; /* Скрываем по умолчанию */
         }
         .input-container input {
             padding: 5px;
@@ -84,8 +85,8 @@
         <img src="images2/2.png" class="slide active" alt="Image 1"> <!-- Первое изображение -->
         <img src="images2/постман.png" class="slide" alt="Image 2"> <!-- Второе изображение -->
         <img src="images2/json.png" class="slide" alt="Image 3"> <!-- Третье изображение -->
-        <div class="input-container">
-            <input type="text" placeholder="Введите код"> <!-- Поле ввода кода -->
+       <div class="textarea-container">
+            <textarea placeholder="Введите код"></textarea> <!-- Поле ввода кода -->
         </div>
         <div class="buttons">
             <button id="prevButton">&#8592;</button> <!-- Стрелка влево -->
@@ -94,3 +95,11 @@
     </div>
 
     <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const inputContainer = document.querySelector('.input-container');
+        const nextButton = document.getElementById('nextButton');
+        const prevButton = document.getElementById('prevButton');
+
+        nextButton.addEventListener('click', () => {
+            slides[currentSlide].classList.remove('active
