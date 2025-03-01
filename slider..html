@@ -4,65 +4,79 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Слайдер изображений</title>
-   <style>
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-}
-.slider {
-    position: relative;
-    width: 600px;
-    height: 250px; /* Уменьшенная высота контейнера */
-    overflow: hidden;
-    border: 2px solid #ccc;
-    border-radius: 10px;
-}
-.slide {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: opacity 0.5s ease;
-}
-.slide.active {
-    opacity: 1;
-}
-.slide img {
-    width: 100%; /* Заставляет изображение занимать всю ширину контейнера */
-    height: auto; /* Сохраняет пропорции изображения */
-    max-height: 100%; /* Ограничивает максимальную высоту изображения */
-    object-fit: contain; /* Сохраняет пропорции и помещает изображение в контейнер */
-}
-.buttons {
-    position: absolute;
-    top: 50%; /* Центрируем кнопки по вертикали */
-    left: 0; /* Установим левую границу на 0 */
-    right: 0; /* Установим правую границу на 0 */
-    display: flex;
-    justify-content: space-between; /* Распределяем кнопки по бокам */
-    align-items: center; /* Центрируем кнопки по вертикали */
-    transform: translateY(-50%); /* Сдвигаем кнопки вверх на половину их высоты */
-    width: 100%; /* Ширина кнопок на 100% */
-}
-button {
-    background: none;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-    width: 60px; /* Увеличьте ширину кнопок */
-    height: 60px; /* Увеличьте высоту кнопок */
-    margin: 0 20px; /* Добавьте отступы между кнопками и краями */
-}
-button:hover {
-    color: #007BFF;
-}
-}
-</style>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .slider {
+            position: relative;
+            width: 600px;
+            height: 250px; /* Уменьшенная высота контейнера */
+            overflow: hidden;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+        }
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        .slide.active {
+            opacity: 1;
+        }
+        .slide img {
+            width: 100%; /* Заставляет изображение занимать всю ширину контейнера */
+            height: auto; /* Сохраняет пропорции изображения */
+            max-height: 100%; /* Ограничивает максимальную высоту изображения */
+            object-fit: contain; /* Сохраняет пропорции и помещает изображение в контейнер */
+        }
+        .input-container {
+            position: absolute;
+            bottom: 20px; /* Расположение поля ввода */
+            left: 50%;
+            transform: translateX(-50%); /* Центрируем поле ввода */
+            background-color: rgba(255, 255, 255, 0.8); /* Полупрозрачный фон */
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .input-container input {
+            padding: 5px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .buttons {
+            position: absolute;
+            top: 50%; /* Центрируем кнопки по вертикали */
+            left: 0; /* Установим левую границу на 0 */
+            right: 0; /* Установим правую границу на 0 */
+            display: flex;
+            justify-content: space-between; /* Распределяем кнопки по бокам */
+            align-items: center; /* Центрируем кнопки по вертикали */
+            transform: translateY(-50%); /* Сдвигаем кнопки вверх на половину их высоты */
+            width: 100%; /* Ширина кнопок на 100% */
+        }
+        button {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            width: 60px; /* Увеличьте ширину кнопок */
+            height: 60px; /* Увеличьте высоту кнопок */
+            margin: 0 20px; /* Добавьте отступы между кнопками и краями */
+        }
+        button:hover {
+            color: #007BFF;
+        }
+    </style>
 </head>
 <body>
 
@@ -70,30 +84,13 @@ button:hover {
         <img src="images2/2.png" class="slide active" alt="Image 1"> <!-- Первое изображение -->
         <img src="images2/постман.png" class="slide" alt="Image 2"> <!-- Второе изображение -->
         <img src="images2/json.png" class="slide" alt="Image 3"> <!-- Третье изображение -->
+        <div class="input-container">
+            <input type="text" placeholder="Введите код"> <!-- Поле ввода кода -->
+        </div>
         <div class="buttons">
             <button id="prevButton">&#8592;</button> <!-- Стрелка влево -->
-    <button id="nextButton">&#8594;</button> <!-- Стрелка вправо -->
+            <button id="nextButton">&#8594;</button> <!-- Стрелка вправо -->
         </div>
     </div>
 
     <script>
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.slide');
-        const nextButton = document.getElementById('nextButton');
-        const prevButton = document.getElementById('prevButton');
-
-        nextButton.addEventListener('click', () => {
-            slides[currentSlide].classList.remove('active');
-            currentSlide = (currentSlide + 1) % slides.length;
-            slides[currentSlide].classList.add('active');
-        });
-
-        prevButton.addEventListener('click', () => {
-            slides[currentSlide].classList.remove('active');
-            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-            slides[currentSlide].classList.add('active');
-        });
-    </script>
-
-</body>
-</html>
